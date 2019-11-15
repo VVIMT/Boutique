@@ -6,8 +6,8 @@ if(!internauteEstConnecteEtEstAdmin())
 	exit();
 }
 //-------------------------------------------------- Affichage ---------------------------------------------------------//
-require_once("../inc/haut_de_site.inc.php");
-require_once("../inc/menu.inc.php");
+require_once("../inc/haut.inc.php");
+require_once("../inc/fonction.inc.php");
 	echo '<h1> Voici les commandes passées sur le site </h1>';
 	echo '<table border="1"><tr>';
 	

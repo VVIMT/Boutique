@@ -12,8 +12,8 @@ if(isset($_GET['msg']) && $_GET['msg'] == "supok")
 	header("Location:gestion_membre.php");
 }
 //-------------------------------------------------- Affichage ---------------------------------------------------------//
-require_once("../inc/haut_de_site.inc.php");
-require_once("../inc/menu.inc.php");
+require_once("../inc/haut.inc.php");
+require_once("../inc/fonction.inc.php");
 echo '<h1> Voici les membres inscrit au site </h1>';
 	$resultat = executeRequete("SELECT * FROM membre");
 	echo "Nombre de membre(s) : " . $resultat->num_rows;

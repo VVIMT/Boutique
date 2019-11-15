@@ -15,7 +15,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n
 session_start();
 
 //--------- CHEMIN
-define("RACINE_SITE","/base_site/");
+define("RACINE_SITE","/Boutique/");
  
 //--------- VARIABLES
 $contenu = '';
