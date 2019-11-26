@@ -1,0 +1,49 @@
+<?php
+//--------- BDD
+
+//=====================================================================================================
+$link = mysqli_init();
+
+$key   = "/etc/ssl/certs/RogerSkyline-key.pem" ;
+openssl_pkey_get_private ( mixed $key [, string $passphrase = "" ] ) : resource
+
+$cert  = "/etc/ssl/certs/RogerSkyline-cert.pem";
+openssl.cafile=/etc/ssl/certs/cacert.pem
+$ca    = NULL;//"/home/userName/etc/mysql/certs/ca-cert.pem";
+$capath = NULL;
+$cipher = NULL;
+
+$dbhost = "51.83.74.152";
+$dbuser = "root";
+$dbpass = ")aWp05QZQ(";
+$db = "boutique";
+
+mysqli_ssl_set($link , $key , $cert , $ca , $capath , $cipher);
+mysqli_real_connect($link, $dbhost, $dbuser, $dbpass, $db, NULL, MYSQLI_CLIENT_SSL);
+//=====================================================================================================
+
+if (!mysqli_real_connect($link, "51.83.74.152", "root", ")aWp05QZQ(", "boutique"))
+{
+	die("Connect Error: " . mysqli_connect_error());
+}
+
+/*$dbhost = "51.83.74.152";
+$dbuser = "root";
+$dbpass = ")aWp05QZQ(";
+$db = "boutique";
+$mysqli = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $mysqli -> error);
+*/
+
+// $mysqli->set_charset("utf8");
+ 
+//--------- SESSION
+session_start();
+
+//--------- CHEMIN
+define("RACINE_SITE","/Boutique/");
+ 
+//--------- VARIABLES
+$contenu = '';
+ 
+//--------- AUTRES INCLUSIONS
+require_once("fonction.inc.php");

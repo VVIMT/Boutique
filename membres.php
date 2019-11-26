@@ -26,12 +26,12 @@ if($_POST)
 	}
 	else
 	{
-		$msg .= "le nouveau mot de passe doit etre renseigne !";
+		$msg .= "le nouveau mot de passe doit " . EAC . "tre renseign" . EAA . "!";
 	}
 }
 if(isset($_GET['action']) && $_GET['action'] == 'modif')
 {
-	$msg .= "la modification a bien ete prise en compte";
+	$msg .= "la modification a bien " . EAA . "t" . EAA . " prise en compte";
 }
 
 require_once("inc/haut_de_site.inc.php");
@@ -40,7 +40,7 @@ echo $msg;
 ?>
 		<h2> Modification de vos informations </h2>
 		<?php
-			print "vous etes connecte sous le pseudo: " . $_SESSION['utilisateur']['pseudo'];
+			print "vous " . EAC . "tes connect" . EAA . " sous le pseudo: " . $_SESSION['utilisateur']['pseudo'];
 		?><br /><br />
 		<form method="post" enctype="multipart/form-data" action="membres.php">
 		<input type="hidden" id="id_membre" name="id_membre" value="<?php if(isset($_SESSION['utilisateur'])) print $_SESSION['utilisateur']['id_membre']; ?>" />

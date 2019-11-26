@@ -23,15 +23,15 @@ if(isset($_POST['payer']))
 		if($produit['stock'] < $_SESSION['panier']['quantite'][$i])
 		{
 			$contenu .= '<hr /><div class="erreur">Stock Restant: ' . $produit['stock'] . '</div>';
-			$contenu .= '<div class="erreur">Quantite demandee: ' . $_SESSION['panier']['quantite'][$i] . '</div>';
+			$contenu .= '<div class="erreur">Quantit' . EAA . ' demandee: ' . $_SESSION['panier']['quantite'][$i] . '</div>';
 			if($produit['stock'] > 0)
 			{
-				$contenu .= '<div class="erreur">la quantite de l\'produit ' . $_SESSION['panier']['id_produit'][$i] . ' a ete reduite car notre stock etait insuffisant, veuillez verifier vos achats.</div>';
+				$contenu .= '<div class="erreur">la quantit' . EAA . ' de produits n' . NUM . '' . $_SESSION['panier']['id_produit'][$i] . ' a ' . EAA . 't' . EAA . ' r' . EAA . 'duite car notre stock ' . EAA . 'tait insuffisant, veuillez v' . EAA . 'rifier vos achats.</div>';
 				$_SESSION['panier']['quantite'][$i] = $produit['stock'];
 			}
 			else
 			{
-				$contenu .= '<div class="erreur">l\'produit ' . $_SESSION['panier']['id_produit'][$i] . ' a ete retire de votre panier car nous sommes en rupture de stock, veuillez verifier vos achats.</div>';
+				$contenu .= '<div class="erreur">l\'produit ' . $_SESSION['panier']['id_produit'][$i] . ' a '. EAA .'t'. EAA .' retir' . EAA . ' de votre panier car nous sommes en rupture de stock, veuillez v' . EAA . 'rifier vos achats.</div>';
 				retirerproduitDuPanier($_SESSION['panier']['id_produit'][$i]);
 				$i--;
 			}
@@ -47,8 +47,8 @@ if(isset($_POST['payer']))
 			executeRequete("INSERT INTO details_commande (id_commande, id_produit, quantite, prix) VALUES ($id_commande, " . $_SESSION['panier']['id_produit'][$i] . "," . $_SESSION['panier']['quantite'][$i] . "," . $_SESSION['panier']['prix'][$i] . ")");
 		}
 		unset($_SESSION['panier']);
-		mail($_SESSION['membre']['email'], "confirmation de la commande", "Merci votre no de suivi est le $id_commande", "From:vendeur@dp_site.com");
-		$contenu .= "<div class='validation'>Merci pour votre commande. votre n° de suivi est le $id_commande</div>";
+		mail($_SESSION['membre']['email'], "confirmation de la commande", "Merci, votre n" . NUM . " de suivi est le $id_commande", "From:vendeur@dp_site.com");
+		$contenu .= "<div class='validation'>Merci pour votre commande. Votre n" . NUM . " de suivi est le $id_commande</div>";
 	}
 }
 
@@ -57,7 +57,7 @@ include("inc/haut.inc.php");
 echo $contenu;
 echo "<table border='1' style='border-collapse: collapse' cellpadding='7'>";
 echo "<tr><td colspan='5'>Panier</td></tr>";
-echo "<tr><th>Titre</th><th>Produit</th><th>Quantite</th><th>Prix Unitaire</th><th>Action</th></tr>";
+echo "<tr><th>Titre</th><th>Produit</th><th>Quantit" . EAA . "</th><th>Prix Unitaire</th><th>Action</th></tr>";
 if(empty($_SESSION['panier']['id_produit'])) // panier vide
 {
 	echo "<tr><td colspan='5'>Votre panier est vide</td></tr>";
@@ -73,11 +73,11 @@ else
 		echo "<td>" . $_SESSION['panier']['prix'][$i] . "</td>";
 		echo "</tr>";
 	}
-	echo "<tr><th colspan='3'>Total</th><td colspan='2'>" . montantTotal() . " euros</td></tr>";
+	echo "<tr><th colspan='3'>Total</th><td colspan='2'>" . montantTotal() . " " . DEVISE . " </td></tr>";
 	if(internauteEstConnecte()) 
 	{
 		echo '<form method="post" action="">';
-		echo '<tr><td colspan="5"><input type="submit" name="payer" value="Valider et déclarer le paiement" /></td></tr>';
+		echo '<tr><td colspan="5"><input type="submit" name="payer" value="Valider et d' . EAA . 'clarer le paiement" /></td></tr>';
 		echo '</form>';	
 	}
 	else 

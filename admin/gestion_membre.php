@@ -1,5 +1,4 @@
 <?php
-// ----------- Ce code est lié à l'eval du dernier jour et n'est donc pas à présenter durant le cours ------------- //	
 require_once("../inc/init.inc.php");
 if(!internauteEstConnecteEtEstAdmin())
 {
@@ -31,7 +30,7 @@ echo '<h1> Voici les membres inscrit au site </h1>';
 		{
 			echo '<td>' . $information . '</td>';
 		}
-		echo "<td><a href='gestion_membre.php?msg=supok&&id_membre=" . $membre['id_membre'] . "' onclick='return(confirm(\"Etes-vous sûr de vouloir supprimer ce membre?\"));'> X </a></td>";
+		echo "<td><a href='gestion_membre.php?msg=supok&&id_membre=" . $membre['id_membre'] . "' onclick='return(confirm(\"Etes-vous sur de vouloir supprimer ce membre?\"));'> X </a></td>";
 		echo '</tr>';
 	}
 	echo '</table>';
