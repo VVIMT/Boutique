@@ -22,7 +22,7 @@ if($_POST)
 				$_POST[$indice] = htmlEntities(addSlashes($valeur));
 			}
 			executeRequete("INSERT INTO membre (pseudo, mdp, nom, prenom, email, civilite, ville, code_postal, adresse) VALUES ('$_POST[pseudo]', '$_POST[mdp]', '$_POST[nom]', '$_POST[prenom]', '$_POST[email]', '$_POST[civilite]', '$_POST[ville]', '$_POST[code_postal]', '$_POST[adresse]')");
-			$contenu .= "<div class='validation'>Vous êtes inscrit à notre site web. <a href=\"connexion.php\"><u>Cliquez ici pour vous connecter</u></a></div>";
+			$contenu .= "<div class='validation'>Vous " . EAC . "tes inscrit à notre site web. <a href=\"connexion.php\"><u>Cliquez ici pour vous connecter</u></a></div>";
 		}
 	}
 }
@@ -32,7 +32,7 @@ if($_POST)
 
 <form method="post" action="">
     <label for="pseudo">Pseudo</label><br>
-    <input type="text" id="pseudo" name="pseudo" maxlength="20" placeholder="votre pseudo" pattern="[a-zA-Z0-9-_.]{1,20}" title="caracteres acceptes : a-zA-Z0-9-_." required="required"><br><br>
+    <input type="text" id="pseudo" name="pseudo" maxlength="20" placeholder="votre pseudo" pattern="[a-zA-Z0-9-_.]{1,20}" title="caract<?php echo EAG; ?>res accept<?php echo EAA; ?>s : a-zA-Z0-9-_." required="required"><br><br>
          
     <label for="mdp">Mot de passe</label><br>
     <input type="password" id="mdp" name="mdp" required="required"><br><br>
@@ -44,7 +44,7 @@ if($_POST)
     <input type="text" id="nom" name="nom" placeholder="votre nom"><br><br>
          
     <label for="prenom">Prenom</label><br>
-    <input type="text" id="prenom" name="prenom" placeholder="votre pr" . EAA . "nom"><br><br>
+    <input type="text" id="prenom" name="prenom" placeholder="votre pr<?php echo EAA; ?>nom"><br><br>
  
     <label for="email">Email</label><br>
     <input type="email" id="email" name="email" placeholder="exemple@gmail.com"><br><br>
