@@ -8,7 +8,7 @@ if(!internauteEstConnecteEtEstAdmin())
 //-------------------------------------------------- Affichage ---------------------------------------------------------//
 require_once("../inc/haut.inc.php");
 require_once("../inc/fonction.inc.php");
-	echo '<h1> Voici les commandes passées sur le site </h1>';
+	echo '<h1> Voici les commandes pass' . EAA . 'es sur le site </h1>';
 	echo '<table border="1"><tr>';
 	
 	$information_sur_les_commandes = executeRequete("select c.*, m.pseudo, m.adresse, m.ville, m.cp from commande c left join membre m on  m.id_membre = c.id_membre");

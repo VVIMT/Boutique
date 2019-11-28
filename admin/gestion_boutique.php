@@ -40,7 +40,7 @@ if(!empty($_POST))
 		$_POST['id_produit'] = $_POST['id_produit'] + 0;
 	}
 	executeRequete("REPLACE INTO produit (id_produit, reference, categorie, titre, description, couleur, taille, public, photo, prix, stock) values ('$_POST[id_produit]', '$_POST[reference]', '$_POST[categorie]', '$_POST[titre]', '$_POST[description]', '$_POST[couleur]', '$_POST[taille]', '$_POST[public]',  '$photo_bdd',  '$_POST[prix]',  '$_POST[stock]')");
-	$contenu .= '<div class="validation">Le produit a été enregistré</div>';
+	$contenu .= '<div class="validation">Le produit a ' . EAA . 't' . EAA . ' enregistr' . EAA . '</div>';
 	$_GET['action'] = 'affichage';
 }
 //--- LIENS PRODUITS ---//
@@ -78,7 +78,7 @@ if(isset($_GET['action']) && $_GET['action'] == "affichage")
 			}
 		}
 		$contenu .= '<td><a href="?action=modification&id_produit=' . $ligne['id_produit'] .'"><img src="../inc/img/edit.png" /></a></td>';
-		$contenu .= '<td><a href="?action=suppression&id_produit=' . $ligne['id_produit'] .'" OnClick="return(confirm(\'En êtes vous certain ?\'));"><img src="../inc/img/delete.png" /></a></td>';
+		$contenu .= '<td><a href="?action=suppression&id_produit=' . $ligne['id_produit'] .'" OnClick="return(confirm(\'En ' . EAC . 'tes vous certain ?\'));"><img src="../inc/img/delete.png" /></a></td>';
 		$contenu .= '</tr>';
 	}
 	$contenu .= '</table><br /><hr /><br />';
@@ -100,7 +100,7 @@ if(isset($_GET['action']) && ($_GET['action'] == 'ajout' || $_GET['action'] == '
 		<input type="hidden" id="id_produit" name="id_produit" value="'; if(isset($produit_actuel['id_produit'])) echo $produit_actuel['id_produit']; echo '" />
 
 		<label for="reference">reference</label><br />
-		<input type="text" id="reference" name="reference" placeholder="la référence de produit" value="'; if(isset($produit_actuel['reference'])) echo $produit_actuel['reference']; echo '" /><br /><br />
+		<input type="text" id="reference" name="reference" placeholder="la reference de produit" value="'; if(isset($produit_actuel['reference'])) echo $produit_actuel['reference']; echo '" /><br /><br />
 
 		<label for="categorie">categorie</label><br />
 		<input type="text" id="categorie" name="categorie" placeholder="la categorie de produit" value="'; if(isset($produit_actuel['categorie'])) echo $produit_actuel['categorie']; echo '"  /><br /><br />
