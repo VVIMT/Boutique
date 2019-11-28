@@ -1,3 +1,5 @@
+<?php require_once("/var/www/html/Boutique/inc/init.inc.php"); ?>
+
 <!Doctype html>
 <html>
     <head>

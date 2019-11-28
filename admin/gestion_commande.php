@@ -39,12 +39,12 @@ require_once("../inc/fonction.inc.php");
 	}
 	echo '</table><br />';
 	echo 'Calcul du montant total des revenus:  <br />';
-		print "le chiffre d'affaires de la societe est de : $chiffre_affaire €"; 
+		print "le chiffre d'affaires de la soci" . EAA . "t" . EAA ." est de : $chiffre_affaire €"; 
 	
 	echo '<br />';
 	if(isset($_GET['suivi']))
 	{	
-		echo '<h1> Voici le détails pour une commande</h1>';
+		echo '<h1> Voici les d' . EAA . 'tails pour une commande</h1>';
 		echo '<table border="1">';
 		echo '<tr>';
 		$information_sur_une_commande = executeRequete("select * from details_commande where id_commande=$_GET[suivi]");
