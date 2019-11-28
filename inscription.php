@@ -44,7 +44,7 @@ if($_POST)
     <input type="text" id="nom" name="nom" placeholder="votre nom"><br><br>
          
     <label for="prenom">Prenom</label><br>
-    <input type="text" id="prenom" name="prenom" placeholder="votre prénom"><br><br>
+    <input type="text" id="prenom" name="prenom" placeholder="votre pr" . EAA . "nom"><br><br>
  
     <label for="email">Email</label><br>
     <input type="email" id="email" name="email" placeholder="exemple@gmail.com"><br><br>
