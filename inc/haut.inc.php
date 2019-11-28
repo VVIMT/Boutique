@@ -8,7 +8,7 @@
         <header>
 			<div class="conteneur">
 				<span>
-					<a href="http://<?php echo IP_ADDRESS; echo RACINE_SITE; ?>boutique.php" title="MonSite">MonSite.com</a>
+					<a href="" title="MonSite">MonSite.com</a>
                 </span>
 				<nav>
 					<?php
