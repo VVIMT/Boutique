@@ -1,15 +1,12 @@
 <?php
 //--------- BDD
 
-$dbhost = "51.83.74.152";
-$dbuser = "root";
+$dbhost = "10.13.5.254";
+$dbuser = "vincent";
 $dbpass = ")aWp05QZQ(";
 $db = "boutique";
-$mysqli = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $mysqli -> error);
+$mysqli = new mysqli("localhost", $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $mysqli -> error);
 
-
-// $mysqli->set_charset("utf8");
- 
 //--------- SESSION
 session_start();
 
